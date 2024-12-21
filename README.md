@@ -1,1 +1,1 @@
-# staticstitegenerator
+# staticsitegenerator
