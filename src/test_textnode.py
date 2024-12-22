@@ -29,6 +29,35 @@ class TestTextNode(unittest.TestCase):
         node2 = TextNode("This is a text node", TextType.BOLD, "https://www.test2.com")
         self.assertNotEqual(node, node2)
 
+class Testtextnodetohtml(unittest.TestCase):
+    def test_text(self):
+        textnode = TextNode("This is a text node", TextType.NORMAL, None)
+        node = textnode.text_node_to_html_node()
+        print(node.to_html())
 
+    def test_bold(self):
+        textnode = TextNode("This is a bold node", TextType.BOLD, None)
+        node = textnode.text_node_to_html_node()
+        print(node.to_html())
+
+    def test_italic(self):
+        textnode = TextNode("This is a italic node", TextType.ITALIC, None)
+        node = textnode.text_node_to_html_node()
+        print(node.to_html())
+
+    def test_CODE(self):
+        textnode = TextNode("This is a code node", TextType.CODE, None)
+        node = textnode.text_node_to_html_node()
+        print(node.to_html())
+
+    def test_LINK(self):
+        textnode = TextNode("This is a link node", TextType.LINKS, "www.google.co.uk")
+        node = textnode.text_node_to_html_node()
+        print(node.to_html())
+
+    def test_IMAGE(self):
+        textnode = TextNode("This is a image node", TextType.IMAGES, "www.google.co.uk/image.png")
+        node = textnode.text_node_to_html_node()
+        print(node.to_html())
 if __name__ == "__main__":
     unittest.main()
